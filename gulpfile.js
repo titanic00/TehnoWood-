@@ -28,6 +28,7 @@ import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
 import { gitignore } from "./config/gulp-tasks/gitignore.js";
 import { otfToTtf, ttfToWoff, fonstStyle } from "./config/gulp-tasks/fonts.js";
+import { deployGit } from "./config/gulp-tasks/deployGit.js";
 
 // Последовательная обработака шрифтов
 const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
@@ -46,18 +47,21 @@ export { fonts }
 export { sprite }
 export { ftp }
 export { zip }
+export { deployGit }
 
 // Построение сценариев выполнения задач
 const development = gulp.series(devTasks);
 const build = gulp.series(buildTasks);
 const deployFTP = gulp.series(buildTasks, ftp);
 const deployZIP = gulp.series(buildTasks, zip);
+const deployGitpages = gulp.series(buildTasks, deployGit);
 
 // Экспорт сценариев
 export { development }
 export { build }
 export { deployFTP }
 export { deployZIP }
+export { deployGitpages }
 
 // Выполнение сценария по умолчанию
 gulp.task('default', development);
