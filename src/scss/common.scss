@@ -1,0 +1,305 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.page {
+
+    // .page__main-block
+
+    &__main-block {
+        @include adaptiveValue("margin-bottom", 60, 30);
+    }
+
+    // .page__story
+
+    &__story {
+        @include adaptiveValue("margin-bottom", 88, 30);
+    }
+
+    // .page__principles
+
+    &__principles {}
+
+    // .page__making
+
+    &__making {
+        @include adaptiveValue("margin-bottom", 59, 30);
+    }
+
+    // .page__technique
+
+    &__technique {}
+
+    // .page__realization
+
+    &__realization {
+        @include adaptiveValue("margin-bottom", 61, 30);
+    }
+
+    // .page__scheme
+
+    &__scheme {
+        @include adaptiveValue("margin-bottom", 87, 30);
+    }
+
+    // .page__objects
+
+    &__objects {
+        @include adaptiveValue("margin-bottom", 93, 30);
+    }
+
+    // .page__partners
+
+    &__partners {
+        @include adaptiveValue("margin-bottom", 88, 30);
+    }
+
+    // .page__letters
+
+    &__letters {
+        @include adaptiveValue("margin-bottom", 94, 30);
+    }
+}
+
+//========================================================================================================================================================
+
+.button {
+    display: inline-flex;
+    border-radius: 2px;
+    font-size: rem(14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // .button_gold
+
+    &_gold {
+        line-height: math.div(14, 14);
+        background-color: $gold;
+    }
+
+    // .button_white
+
+    &_white {
+        text-transform: uppercase;
+        line-height: math.div(18, 16);
+        background-color: $white;
+    }
+}
+
+//========================================================================================================================================================
+
+.arrow {
+    height: rem(55);
+    width: rem(55);
+    border: 1px solid $white;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+
+    &_prev {
+        background: url('@img/main-block/arrow-prev.svg') center no-repeat;
+        background-color: rgba(255, 255, 255, 0.4);
+
+        .letters-page & {
+            background-color: rgba(29, 29, 29, 0.6);
+        }
+    }
+
+    &_next {
+        background: url('@img/main-block/arrow-right.svg') center no-repeat;
+        background-color: rgba(255, 255, 255, 0.4);
+
+        .letters-page & {
+            background-color: rgba(29, 29, 29, 0.6);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.swiper-pagination-bullet {
+    display: block;
+    width: rem(45);
+    height: rem(3);
+    border-radius: rem(10);
+    background-color: $white;
+    transition: all 0.3s ease 0s;
+
+    &-active {
+        opacity: 0.5;
+    }
+
+    .objects-page__pagination & {
+        background-color: $mainColor;
+    }
+
+    .letters-page__pagination & {
+        background-color: $mainColor;
+    }
+}
+
+//========================================================================================================================================================
+
+.scroll-down {
+    width: rem(44);
+    height: rem(44);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        background: url('@img/main-block/arrow-bottom.svg') center no-repeat;
+        width: rem(34);
+        height: rem(34);
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+}
+
+//========================================================================================================================================================
+
+.title {
+    @include adaptiveValue("font-size", 36, 28);
+    line-height: math.div(47, 36);
+    max-width: rem(376);
+
+    &_white {
+        color: $white;
+    }
+}
+
+//========================================================================================================================================================
+
+.header-page {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(15);
+
+    &:not(:last-child) {
+        margin-bottom: rem(38);
+    }
+
+    @media (max-width:$tablet) {
+        flex-direction: column;
+    }
+}
+
+.texts-header {
+    position: relative;
+    max-width: rem(634);
+
+    &_black {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: percent(348, 634);
+            height: rem(4);
+            background-color: $mainColor;
+        }
+    }
+
+    &_gold {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: percent(348, 634);
+            height: rem(4);
+            background-color: $gold;
+        }
+    }
+}
+
+.text-header {
+    line-height: math.div(21, 16);
+
+    &:first-child {
+        margin-top: rem(22);
+    }
+
+    &:not(:last-child) {
+        margin-bottom: rem(29);
+    }
+}
+
+//========================================================================================================================================================
+
+.label-form-admit {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    // .label-form-phone__checkbox
+
+    &__checkbox {
+        display: none;
+
+        &:checked~.label-form-admit__fake {
+            &::after {
+                content: '';
+                position: absolute;
+                width: rem(15);
+                height: rem(15);
+                top: 0;
+                left: 0;
+                background-color: $gold;
+            }
+        }
+    }
+
+    // .label-form-phone__fake
+
+    &__fake {
+        width: rem(17);
+        height: rem(17);
+        border: 1px solid #E7E7E7;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    // .label-form-phone__text
+
+    &__text {
+        color: $grey;
+    }
+}
+
+//========================================================================================================================================================
+
+.form-realization-input {
+    background-color: #4E4E4E;
+    max-width: rem(378);
+
+    input,
+    textarea {
+        background-color: transparent;
+        width: 100%;
+        padding: rem(16) rem(16) rem(16) rem(64);
+        color: $white;
+    }
+
+    &__phone {
+        &::placeholder {
+            font-weight: 550;
+            line-height: math.div(16, 16);
+            color: $white;
+        }
+    }
+
+    &__comment {
+        resize: none;
+        min-height: rem(117);
+
+        &::placeholder {
+            line-height: math.div(14, 16);
+            color: $white;
+            opacity: 0.5;
+        }
+    }
+}
