@@ -93,7 +93,7 @@ function initSliders() {
 			// События
 			on: {
 				slideChange: function () {
-					mainBlock.style.background = `url('../img/main-block/bg-${this.activeIndex}.jpg') center / cover no-repeat`;
+					mainBlock.style.background = `url('@img/main-block/bg-${this.activeIndex}.jpg') center / cover no-repeat`;
 				}
 			}
 		});
