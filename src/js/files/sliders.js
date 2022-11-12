@@ -26,6 +26,7 @@ import "../../scss/base/swiper.scss";
 // Инициализация слайдеров
 function initSliders() {
 	const mainBlock = document.querySelector('.main-block');
+	mainBlock.style.background = `url('${wnm_custom.template_url}/assets/img/main-block/bg-0.webp') center / cover no-repeat`;
 
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
@@ -93,7 +94,7 @@ function initSliders() {
 			// События
 			on: {
 				slideChange: function () {
-					mainBlock.style.background = `url('img/main-block/bg-${this.activeIndex}.webp') center / cover no-repeat`;
+					mainBlock.style.background = `url('${wnm_custom.template_url}/assets/img/main-block/bg-${this.activeIndex}.webp') center / cover no-repeat`;
 				}
 			}
 		});

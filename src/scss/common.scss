@@ -232,25 +232,15 @@
 //========================================================================================================================================================
 
 .label-form-admit {
-    display: flex;
-    align-items: center;
-    gap: rem(12);
-    // .label-form-phone__checkbox
 
-    &__checkbox {
+    label {
+        display: flex;
+        align-items: center;
+        gap: rem(12);
+    }
+
+    .wpcf7-form-control-wrap {
         display: none;
-
-        &:checked~.label-form-admit__fake {
-            &::after {
-                content: '';
-                position: absolute;
-                width: rem(15);
-                height: rem(15);
-                top: 0;
-                left: 0;
-                background-color: $gold;
-            }
-        }
     }
 
     // .label-form-phone__fake
@@ -261,6 +251,16 @@
         border: 1px solid #E7E7E7;
         position: relative;
         flex-shrink: 0;
+
+        .label-form-admit_admitted &::after {
+            content: '';
+            position: absolute;
+            width: rem(15);
+            height: rem(15);
+            top: 0;
+            left: 0;
+            background-color: $gold;
+        }
     }
 
     // .label-form-phone__text

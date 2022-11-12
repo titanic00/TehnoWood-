@@ -820,11 +820,13 @@
     // .form-realization__label-file
 
     &__label-file {
-        display: flex;
-        gap: rem(8);
-
         &:not(:last-child) {
             margin-bottom: rem(31);
+        }
+
+        label {
+            display: flex;
+            gap: rem(8);
         }
     }
 
@@ -851,14 +853,18 @@
         line-height: math.div(14, 14);
     }
 
+    // .form-realization__button-div
+
+    &__button-div {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
     // .form-realization__button
 
     &__button {
         padding: rem(16) rem(58);
-
-        &:not(:last-child) {
-            margin-bottom: rem(20);
-        }
     }
 }
 
@@ -874,21 +880,6 @@
     // .form-phone__label
 
     &__label {}
-}
-
-.label-form-admit {
-
-    // .label-form-admit__checkbox
-
-    &__checkbox {}
-
-    // .label-form-admit__fake
-
-    &__fake {}
-
-    // .label-form-admit__text
-
-    &__text {}
 }
 
 //========================================================================================================================================================
